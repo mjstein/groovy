@@ -1,5 +1,7 @@
-int return_random(){
-  return 10 
+import java.util.Random
+Random  rand = new Random()
+int return_random(max=10){
+  return rand.nextInt(max+1) 
 }
 
 node {
