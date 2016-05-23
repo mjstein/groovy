@@ -17,7 +17,7 @@ void get_from_git(){
 
 
 node {
-   def job_map = ['qa':echo 'blah'}]
+   def job_map = ['qa':{echo 'blah'}]
 
    def jobname="${env.JOB_NAME}"
    echo "check out for ${jobname}"
