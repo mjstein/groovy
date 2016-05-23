@@ -15,7 +15,7 @@ node {
    echo "startin Prd"
    int i = return_random()
    if (dotests == 'true') {
-     echo "${dotests}"
+     echo "${dotests} ${i}"
      stage 'Test'
      input "Proceed Test"
      step([$class: 'Fingerprinter', targets: '*'])
