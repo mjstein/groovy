@@ -4,9 +4,16 @@ int return_random(rand, max=10){
   return rand.nextInt(max+1) 
 }
 
+
+String specify_stg(name){
+  stage name
+  echo "commencing stage ${name}"
+}
+
 node {
-   stage 'QA'
-   echo 'QA Stage:'
+//   stage 'QA'
+//   echo 'QA Stage:'
+   specify_stg('QA')
    def jobname="${env.JOB_NAME}"
    echo "check out for ${jobname}"
    git url: 'https://github.com/mjstein/mjs-kubernetes.git'
