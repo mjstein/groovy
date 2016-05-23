@@ -11,8 +11,8 @@ void specify_stg(String name, Closure method = {}){
   method()
 }
 
-void get_from_git(){ 
-  git url: 'https://github.com/mjstein/mjs-kubernetes.git'
+Closure get_from_git(){ 
+  {git url: 'https://github.com/mjstein/mjs-kubernetes.git'}
 }
 
 
