@@ -12,7 +12,7 @@ void specify_stg(String name, Closure method = {}){
 }
 
 Closure get_from_git(){ 
-  return {sh 'ls'}
+  return {evaluate("sh 'ls'")}
 }
 
 
