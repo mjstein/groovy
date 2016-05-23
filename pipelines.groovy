@@ -1,6 +1,6 @@
 import java.util.Random
 Random  rand = new Random()
-int return_random(max=10){
+int return_random(rand, max=10){
   return rand.nextInt(max+1) 
 }
 
@@ -15,7 +15,7 @@ node {
    
    stage 'Prod Stage'
    echo "startin Prd"
-   int i = return_random()
+   int i = return_random(rand)
    if (dotests == 'true') {
      echo "${dotests} ${i}"
      stage 'Test'
