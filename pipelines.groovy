@@ -5,23 +5,22 @@ int return_random(rand, max=10){
 }
 
 
-String specify_stg(name){
+String specify_stg(String name, Closure method){
   stage name
   echo "commencing stage ${name}"
 }
 
 node {
-//   stage 'QA'
-//   echo 'QA Stage:'
-   specify_stg('QA')
    def jobname="${env.JOB_NAME}"
    echo "check out for ${jobname}"
    git url: 'https://github.com/mjstein/mjs-kubernetes.git'
-   stage 'Pre'
-   echo 'Pre Stage'
+
+   specify_stg('QA')
+
+   specify_stg('Pre')
+
+   specify_stg('Prd')
    
-   stage 'Prod Stage'
-   echo "startin Prd"
    int i = return_random(rand)
    if (dotests == 'true') {
      echo "${dotests} ${i}"
