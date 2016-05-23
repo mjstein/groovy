@@ -23,3 +23,4 @@ node {
    echo "check out for ${jobname}"
    git url: 'https://github.com/mjstein/mjs-kubernetes.git'
    for (item in job_map){ specify_stg(item.key , item.value)}
+}
