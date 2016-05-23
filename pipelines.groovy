@@ -11,7 +11,7 @@ void specify_stg(String name, String method){
   evaluate(method)
 }
 
-Closure get_from_git(){ 
+String get_from_git(){ 
   return "sh 'ls -a'"
 }
 
