@@ -5,9 +5,10 @@ int return_random(rand, max=10){
 }
 
 
-String specify_stg(String name, Closure method){
+String specify_stg(String name, Closure method = {}){
   stage name
   echo "commencing stage ${name}"
+  method()
 }
 
 node {
@@ -15,7 +16,7 @@ node {
    echo "check out for ${jobname}"
    git url: 'https://github.com/mjstein/mjs-kubernetes.git'
 
-   specify_stg('QA')
+   specify_stg('QA', {echo "hello"})
 
    specify_stg('Pre')
 
