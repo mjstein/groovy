@@ -18,7 +18,7 @@ Closure get_from_git(){
 //Start from here
 node {
     test_message = "Oh Dear this hasnt worked really" 
-    specify_dev('dev' , {echo "dev"})
+    specify_stg('Dev' , {echo "dev"})
     
     specify_stg('Qa' , get_from_git())
     if (dotests == 'true'){
