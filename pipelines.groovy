@@ -20,6 +20,11 @@ node {
     specify_stg('Qa' , get_from_git())
     if (dotests == 'true'){
       specify_stg('Test' , {sh 'ls -a'})
+    } else {
+
+    // Call it anyway but leave empty so we keep history
+      specify_stg('Test' , {})
+
     }
     specify_stg('Prd' , {sh 'ls -a'})
 }
