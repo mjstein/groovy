@@ -17,9 +17,9 @@ Closure get_from_git(){
 
 node {
 
-//   def jobname="${env.JOB_NAME}"
-//   echo "check out for ${jobname}"
-//   git url: 'https://github.com/mjstein/mjs-kubernetes.git'
     specify_stg('Qa' , get_from_git())
+    if (dotests == 'true'){
+      specify_stg('Test' , {sh 'ls -a'})
+    }
     specify_stg('Prd' , {sh 'ls -a'})
 }
