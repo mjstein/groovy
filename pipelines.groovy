@@ -5,16 +5,15 @@ int return_random(rand, max=10){
 }
 
 
-void specify_stg(String name, String method){
+void specify_stg(String name, Closure method){
   stage name
   echo "Commencing stage ${name}"
-  evaluate(method)
+  method()
 }
 
-String get_from_git(){ 
-  return "sh 'ls -a'"
+Closure get_from_git(){ 
+  return {sh 'ls -a'}
 }
-
 
 node {
 
@@ -22,4 +21,5 @@ node {
 //   echo "check out for ${jobname}"
 //   git url: 'https://github.com/mjstein/mjs-kubernetes.git'
     specify_stg('Qa' , get_from_git())
+    specify_stg('Prd' , get_from_git())
 }
