@@ -12,7 +12,7 @@ void specify_stg(String name, Closure method = {}){
 }
 
 Closure get_from_git(){ 
-  return {git url: 'https://github.com/mjstein/mjs-kubernetes.git'}
+  return {"git url: 'https://github.com/mjstein/mjs-kubernetes.git'"}
 }
 
 
