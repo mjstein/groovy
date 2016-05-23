@@ -17,7 +17,7 @@ Closure get_from_git(){
 
 
 node {
-   def job_map = ['qa':get_from_git(), 'pre':{echo "doing summit"}, 'prd':{echo "doing summat else"}]
+   def job_map = ['qa':get_from_git(), 'pre':get_from_git(), 'prd':get_from_git()]
 
    def jobname="${env.JOB_NAME}"
    echo "check out for ${jobname}"
