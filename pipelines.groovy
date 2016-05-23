@@ -16,7 +16,7 @@ node {
    def jobname="${env.JOB_NAME}"
    echo "check out for ${jobname}"
    git url: 'https://github.com/mjstein/mjs-kubernetes.git'
-   for (item in job_map){ println("$item.key:$item.value");}
+   for (item in job_map){ specify_stg(item.key , (Closure)item.value)}
 //   specify_stg('QA', {echo "hello"})
 
 //   specify_stg('Pre')
