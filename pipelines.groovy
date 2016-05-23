@@ -12,7 +12,7 @@ void specify_stg(String name, Closure method){
 }
 
 Closure get_from_git(){ 
-  return {sh 'ls -a'}
+  return {git url: 'https://github.com/mjstein/chmjs-monit.git'}
 }
 
 node {
@@ -21,5 +21,5 @@ node {
 //   echo "check out for ${jobname}"
 //   git url: 'https://github.com/mjstein/mjs-kubernetes.git'
     specify_stg('Qa' , get_from_git())
-    specify_stg('Prd' , get_from_git())
+    specify_stg('Prd' , {sh 'ls -a'})
 }
