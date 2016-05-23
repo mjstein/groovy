@@ -8,11 +8,11 @@ int return_random(rand, max=10){
 void specify_stg(String name, Closure method = {}){
   stage name
   echo "Commencing stage ${name}"
-  method()
+  eval(method)
 }
 
 Closure get_from_git(){ 
-  return {evaluate("sh 'ls'")}
+  return "sh 'ls'"
 }
 
 
