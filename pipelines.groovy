@@ -1,5 +1,8 @@
+int return_random(){
+  return 10 
+}
+
 node {
-  
    stage 'QA'
    echo 'QA Stage:'
    def jobname="${env.JOB_NAME}"
@@ -10,6 +13,7 @@ node {
    
    stage 'Prod Stage'
    echo "startin Prd"
+   int i = return_random()
    if (dotests == 'true') {
      echo "${dotests}"
      stage 'Test'
