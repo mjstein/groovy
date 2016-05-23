@@ -5,7 +5,7 @@ int return_random(rand, max=10){
 }
 
 
-String specify_stg(String name, Closure method = {}){
+void specify_stg(String name, Closure method = {}){
   stage name
   echo "Commencing stage ${name}"
   method()
