@@ -12,9 +12,7 @@ String specify_stg(String name, Closure method = {}){
 }
 
 node {
-   def job_map = ['qa':{git url: 'https://github.com/mjstein/mjs-kubernetes.git'}, 'prd':{
-   echo 'hey2'
-   } ]
+   def job_map = ['qa':{git url: 'https://github.com/mjstein/mjs-kubernetes.git'}, 'prd':{echo 'hey2'} ]
    def jobname="${env.JOB_NAME}"
    echo "check out for ${jobname}"
    git url: 'https://github.com/mjstein/mjs-kubernetes.git'
